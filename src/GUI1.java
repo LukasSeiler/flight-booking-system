@@ -39,7 +39,7 @@ public class GUI1 extends JFrame{
 	static GUI2 frameGUI2;
 	private JPanel contentPane;
 	/*Variable für Status des Buttons Nur Hinflug*/
-	private boolean statushinflug = true;
+	static boolean statushinflug = true;
 	private JLabel JTab;
 	private JLabel JTnach;
 	public JTextField JThinflugdatum;

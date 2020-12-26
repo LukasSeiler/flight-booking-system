@@ -37,11 +37,13 @@ public class GUI2 extends JFrame{
 	
 	GUI2 frameGUI2;
 	JPanel flugauswahl1;
-	GridLayout Layoutflugauswahl1 = new GridLayout(2,3);
 	private JTable JTflugauswahl;
 	static GUI3 frameGUI3;
 	static int persons = 0;
-	
+	static int price = 0;
+	String [] abflug = { "08:00 Uhr", "08:30 Uhr", "09:00 Uhr", "09:30 Uhr", "10:00 Uhr", "10:30 Uhr", "11:00 Uhr", "11:30 Uhr", "12:00 Uhr", "12:30 Uhr", "13:00 Uhr", "13:30 Uhr", "14:00 Uhr", "14:30 Uhr", "15:00 Uhr", "15:30 Uhr", "16:00 Uhr"};
+	String [] ankunft = {"09:00 Uhr", "09:30 Uhr", "10:00 Uhr", "10:30 Uhr", "11:00 Uhr", "11:30 Uhr", "12:00 Uhr", "12:30 Uhr", "13:00 Uhr", "13:30 Uhr", "14:00 Uhr", "14:30 Uhr", "15:00 Uhr", "15:30 Uhr", "16:00 Uhr", "16:30 Uhr", "17:00 Uhr"};
+	int [] preis = {200, 190, 180, 170, 160, 150, 140, 130, 120, 110, 100};
 	public GUI2(GUI1 frame) {
 		
 		persons = frame.count1 + frame.count2 + frame.count3;
@@ -131,35 +133,106 @@ public class GUI2 extends JFrame{
 		JLabel JLtitlepreis = new JLabel("Preis:");
 		JLtitlepreis.setBounds(584, 253, 81, 14);
 		getContentPane().add(JLtitlepreis);
+
+			
+			String[] columnNames1 = { "Datum", "Abflugzeit", "Ankunftszeit", "Datum", "Abflugzeit", "Ankunftszeit", "Preis" };
+			Object [][] rowdata1 = { { frame.JThinflugdatum.getText(), abflug[0], ankunft[0], frame.JTrückflugdatum.getText(), abflug[3], ankunft[3], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[1], ankunft[1], frame.JTrückflugdatum.getText(), abflug[4], ankunft[4], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[2], ankunft[2], frame.JTrückflugdatum.getText(), abflug[5], ankunft[5], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[3], ankunft[3], frame.JTrückflugdatum.getText(), abflug[6], ankunft[6], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[4], ankunft[4], frame.JTrückflugdatum.getText(), abflug[7], ankunft[7], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[5], ankunft[5], frame.JTrückflugdatum.getText(), abflug[8], ankunft[8], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[6], ankunft[6], frame.JTrückflugdatum.getText(), abflug[9], ankunft[9], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[7], ankunft[7], frame.JTrückflugdatum.getText(), abflug[10], ankunft[10], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[8], ankunft[8], frame.JTrückflugdatum.getText(), abflug[11], ankunft[11], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[9], ankunft[9], frame.JTrückflugdatum.getText(), abflug[12], ankunft[12], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[10], ankunft[10], frame.JTrückflugdatum.getText(), abflug[13], ankunft[13], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[11], ankunft[11], frame.JTrückflugdatum.getText(), abflug[14], ankunft[14], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[12], ankunft[12], frame.JTrückflugdatum.getText(), abflug[15], ankunft[15], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[13], ankunft[13], frame.JTrückflugdatum.getText(), abflug[16], ankunft[16], preis[0]+" CHF" }};
+			
+			String[] columnNames2 = { "Datum", "Abflugzeit", "Ankunftszeit", "Datum", "Abflugzeit", "Ankunftszeit", "Preis" };
+			Object [][] rowdata2 = { { frame.JThinflugdatum.getText(), abflug[0], ankunft[0], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[1], ankunft[1], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[2], ankunft[2], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[3], ankunft[3], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[4], ankunft[4], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[5], ankunft[5], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[6], ankunft[6], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[7], ankunft[7], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[8], ankunft[8], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[9], ankunft[9], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[10], ankunft[10], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[11], ankunft[11], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[12], ankunft[12], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[13], ankunft[13], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[14], ankunft[14], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[15], ankunft[15], " - ", " - ", " - ", preis[10]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[16], ankunft[16], " - ", " - ", " - ", preis[10]+" CHF" }};
+			
+			String[] columnNames3 = { "Datum", "Abflugzeit", "Ankunftszeit", "Datum", "Abflugzeit", "Ankunftszeit", "Preis" };
+			Object [][] rowdata3 = { { frame.JThinflugdatum.getText(), abflug[0], ankunft[0], frame.JTrückflugdatum.getText(), abflug[0], ankunft[0], preis[5]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[0], ankunft[0], frame.JTrückflugdatum.getText(), abflug[1], ankunft[1], preis[5]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[0], ankunft[0], frame.JTrückflugdatum.getText(), abflug[2], ankunft[2], preis[5]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[1], ankunft[1], frame.JTrückflugdatum.getText(), abflug[1], ankunft[1], preis[4]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[1], ankunft[1], frame.JTrückflugdatum.getText(), abflug[2], ankunft[2], preis[4]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[1], ankunft[1], frame.JTrückflugdatum.getText(), abflug[3], ankunft[3], preis[4]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[2], ankunft[2], frame.JTrückflugdatum.getText(), abflug[2], ankunft[2], preis[3]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[2], ankunft[2], frame.JTrückflugdatum.getText(), abflug[3], ankunft[3], preis[3]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[2], ankunft[2], frame.JTrückflugdatum.getText(), abflug[4], ankunft[4], preis[3]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[3], ankunft[3], frame.JTrückflugdatum.getText(), abflug[3], ankunft[3], preis[2]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[3], ankunft[3], frame.JTrückflugdatum.getText(), abflug[4], ankunft[4], preis[2]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[3], ankunft[3], frame.JTrückflugdatum.getText(), abflug[5], ankunft[5], preis[2]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[4], ankunft[4], frame.JTrückflugdatum.getText(), abflug[4], ankunft[4], preis[1]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[4], ankunft[4], frame.JTrückflugdatum.getText(), abflug[5], ankunft[5], preis[1]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[4], ankunft[4], frame.JTrückflugdatum.getText(), abflug[6], ankunft[6], preis[1]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[5], ankunft[5], frame.JTrückflugdatum.getText(), abflug[5], ankunft[5], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[5], ankunft[5], frame.JTrückflugdatum.getText(), abflug[6], ankunft[6], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[5], ankunft[5], frame.JTrückflugdatum.getText(), abflug[7], ankunft[7], preis[0]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[6], ankunft[6], frame.JTrückflugdatum.getText(), abflug[6], ankunft[6], preis[1]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[6], ankunft[6], frame.JTrückflugdatum.getText(), abflug[7], ankunft[7], preis[1]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[6], ankunft[6], frame.JTrückflugdatum.getText(), abflug[8], ankunft[8], preis[1]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[7], ankunft[7], frame.JTrückflugdatum.getText(), abflug[7], ankunft[7], preis[2]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[7], ankunft[7], frame.JTrückflugdatum.getText(), abflug[8], ankunft[8], preis[2]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[7], ankunft[7], frame.JTrückflugdatum.getText(), abflug[9], ankunft[9], preis[2]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[8], ankunft[8], frame.JTrückflugdatum.getText(), abflug[8], ankunft[8], preis[3]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[8], ankunft[8], frame.JTrückflugdatum.getText(), abflug[9], ankunft[9], preis[3]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[8], ankunft[8], frame.JTrückflugdatum.getText(), abflug[10], ankunft[10], preis[3]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[9], ankunft[9], frame.JTrückflugdatum.getText(), abflug[9], ankunft[9], preis[4]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[9], ankunft[9], frame.JTrückflugdatum.getText(), abflug[10], ankunft[10], preis[4]+" CHF" },
+									{ frame.JThinflugdatum.getText(), abflug[9], ankunft[9], frame.JTrückflugdatum.getText(), abflug[11], ankunft[11], preis[4]+" CHF" }};
+			
+		if(frame.JThinflugdatum.getText().equalsIgnoreCase(frame.JTrückflugdatum.getText())) {
+			JTflugauswahl = new JTable(rowdata1, columnNames1) {
+				public boolean editCellAt(int row, int column, java.util.EventObject e) {
+		            return false;
+		         }
+			};
+		}
+		else if(frame.statushinflug == false) {
+			JTflugauswahl = new JTable(rowdata2, columnNames2) {
+				public boolean editCellAt(int row, int column, java.util.EventObject e) {
+		            return false;
+		         }
+			};
+		}
+		else {
+			JTflugauswahl = new JTable(rowdata3, columnNames3) {
+				public boolean editCellAt(int row, int column, java.util.EventObject e) {
+		            return false;
+		         }
+			};
+		}
 		
-		String[] columnNames = { "Datum", "Abflugzeit", "Ankunftszeit", "Datum", "Abflugzeit", "Ankunftszeit", "Preis" };
-		Object [][] rowdata = { { frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" },
-								{ frame.JThinflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", frame.JTrückflugdatum.getText(), "15:00 Uhr", "17:00 Uhr", "200 CHF" }};
-		
-		JTable JTflugauswahl = new JTable(rowdata, columnNames) {
-			public boolean editCellAt(int row, int column, java.util.EventObject e) {
-	            return false;
-	         }
-		};
 		JTflugauswahl.setTableHeader(null);
 		JTflugauswahl.setFillsViewportHeight(true);
 		JTflugauswahl.setBounds(10, 268, 684, 182);
 		getContentPane().add(JTflugauswahl);
 		
-		JScrollPane scrollPane = new JScrollPane(JTflugauswahl);
-		scrollPane.setBounds(10, 268, 684, 182);
-		getContentPane().add(scrollPane);
-		scrollPane.setVisible(true);
+		JScrollPane scrollPane1 = new JScrollPane(JTflugauswahl);
+		scrollPane1.setBounds(10, 268, 684, 182);
+		getContentPane().add(scrollPane1);
+		
 		
 		/*--------------------------------------------------*/
 		
@@ -189,6 +262,12 @@ public class GUI2 extends JFrame{
 					JOptionPane.showMessageDialog(frameGUI2,"Sie müssen einen Flug auswählen.","Hinweis",JOptionPane.WARNING_MESSAGE);     
 				}
 				else {
+					String flyprice;
+					int row = JTflugauswahl.getSelectedRow();
+					int column = 6;
+					flyprice = (String) JTflugauswahl.getValueAt(row, column);
+					String price_tmp = flyprice.replace(" CHF", "");
+					price = Integer.parseInt(price_tmp);
 					setVisible(false);
 					frameGUI3 = new GUI3(frameGUI2);
 					frameGUI3.setVisible(true);

@@ -626,7 +626,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs2b.getIcon() == icon2){
 					JLs2b.setIcon(icon1);
 					betrag = betrag - 20;
 					JLbetrag.setText(betrag+" CHF");
@@ -644,7 +644,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs2c.getIcon() == icon2){
 					JLs2c.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -712,7 +712,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs3b.getIcon() == icon2){
 					JLs3b.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -730,7 +730,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs3c.getIcon() == icon2){
 					JLs3c.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -798,7 +798,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs4b.getIcon() == icon2){
 					JLs4b.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -816,7 +816,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs4c.getIcon() == icon2){
 					JLs4c.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -884,7 +884,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs5b.getIcon() == icon2){
 					JLs5b.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -902,7 +902,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs5c.getIcon() == icon2){
 					JLs5c.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -970,7 +970,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs6b.getIcon() == icon2){
 					JLs6b.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -988,7 +988,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs6c.getIcon() == icon2){
 					JLs6c.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -1056,7 +1056,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs7b.getIcon() == icon2){
 					JLs7b.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -1074,7 +1074,7 @@ public class GUI3 extends JFrame{
 					betrag = betrag + 20;
 					JLbetrag.setText(betrag+" CHF");
 				}
-				else {
+				else if(JLs7c.getIcon() == icon2){
 					JLs7c.setIcon(icon1);
 					selected--;
 					betrag = betrag - 20;
@@ -1110,7 +1110,13 @@ public class GUI3 extends JFrame{
 		JLweiter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				setVisible(false);
+				if(selected == frameGUI2.persons) {
+					setVisible(false);	
+					System.out.println("Total: "+(betrag+frameGUI2.price));
+				}
+				else {
+					JOptionPane.showMessageDialog(frameGUI3,"Es wurden weniger als "+frameGUI2.persons+" Person/en ausgewählt","Hinweis",JOptionPane.WARNING_MESSAGE); 
+				}
 			}
 		});
 		
