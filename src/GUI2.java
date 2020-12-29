@@ -35,15 +35,20 @@ import javax.swing.JScrollBar;
 
 public class GUI2 extends JFrame{
 	
-	GUI2 frameGUI2;
+	static GUI2 frameGUI2;
+	static GUI3 frameGUI3;
 	JPanel flugauswahl1;
 	private JTable JTflugauswahl;
-	static GUI3 frameGUI3;
 	static int persons = 0;
 	static int price = 0;
+	static String abflug1;
+	static String abflug2;
+	static String ankunft1;
+	static String ankunft2;
 	String [] abflug = { "08:00 Uhr", "08:30 Uhr", "09:00 Uhr", "09:30 Uhr", "10:00 Uhr", "10:30 Uhr", "11:00 Uhr", "11:30 Uhr", "12:00 Uhr", "12:30 Uhr", "13:00 Uhr", "13:30 Uhr", "14:00 Uhr", "14:30 Uhr", "15:00 Uhr", "15:30 Uhr", "16:00 Uhr"};
 	String [] ankunft = {"09:00 Uhr", "09:30 Uhr", "10:00 Uhr", "10:30 Uhr", "11:00 Uhr", "11:30 Uhr", "12:00 Uhr", "12:30 Uhr", "13:00 Uhr", "13:30 Uhr", "14:00 Uhr", "14:30 Uhr", "15:00 Uhr", "15:30 Uhr", "16:00 Uhr", "16:30 Uhr", "17:00 Uhr"};
 	int [] preis = {200, 190, 180, 170, 160, 150, 140, 130, 120, 110, 100};
+	
 	public GUI2(GUI1 frame) {
 		
 		persons = frame.count1 + frame.count2 + frame.count3;
@@ -262,15 +267,20 @@ public class GUI2 extends JFrame{
 					JOptionPane.showMessageDialog(frameGUI2,"Sie müssen einen Flug auswählen.","Hinweis",JOptionPane.WARNING_MESSAGE);     
 				}
 				else {
-					String flyprice;
 					int row = JTflugauswahl.getSelectedRow();
 					int column = 6;
-					flyprice = (String) JTflugauswahl.getValueAt(row, column);
+					String flyprice = (String) JTflugauswahl.getValueAt(row, column);
 					String price_tmp = flyprice.replace(" CHF", "");
 					price = Integer.parseInt(price_tmp);
-					setVisible(false);
-					frameGUI3 = new GUI3(frameGUI2);
+					abflug1 = (String) JTflugauswahl.getValueAt(row, 1);
+					ankunft1 = (String) JTflugauswahl.getValueAt(row, 2);
+					if(GUI1.statushinflug == true) {
+						abflug2 = (String) JTflugauswahl.getValueAt(row, 4);
+						ankunft2 = (String) JTflugauswahl.getValueAt(row, 5);
+					}
+					frameGUI3 = new GUI3(GUI2.frameGUI2);
 					frameGUI3.setVisible(true);
+					setVisible(false);
 				}
 			}
 		});

@@ -42,14 +42,15 @@ import javax.swing.JScrollBar;
 
 public class GUI3 extends JFrame{
 	
-	GUI3 frameGUI3;
+	static GUI3 frameGUI3;
+	static GUI4 frameGUI4;
 	ImageIcon icon1 = new ImageIcon(getClass().getResource("icons8-sleeper-chair-35.png"));
 	ImageIcon icon2 = new ImageIcon(getClass().getResource("icons8-sleeper-chair-36.png"));
 	Color myOrange = new Color(255, 127, 000);
 	int i = 0;
 	int j = 0;
 	int selected = 0;
-	int betrag = 0;
+	static int betrag = 0;
 
 	public GUI3(GUI2 frameGUI2) {
 		setSize(585, 569);
@@ -1112,7 +1113,9 @@ public class GUI3 extends JFrame{
 			public void mouseClicked(MouseEvent e) {
 				if(selected == frameGUI2.persons) {
 					setVisible(false);	
-					System.out.println("Total: "+(betrag+frameGUI2.price));
+					//System.out.println("Total: "+(betrag+frameGUI2.price));
+					frameGUI4 = new GUI4(frameGUI3);
+					frameGUI4.setVisible(true);
 				}
 				else {
 					JOptionPane.showMessageDialog(frameGUI3,"Es wurden weniger als "+frameGUI2.persons+" Person/en ausgewählt","Hinweis",JOptionPane.WARNING_MESSAGE); 
@@ -1124,7 +1127,8 @@ public class GUI3 extends JFrame{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				setVisible(false);
-				frameGUI2.setVisible(true);
+				betrag = 0;
+				GUI1.frameGUI2.setVisible(true);
 			}
 		});
 	}

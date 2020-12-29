@@ -36,30 +36,39 @@ import javax.swing.ListSelectionModel;
 
 public class Zielflughafen extends JFrame{
 	
+	/*Initialisierung der API*/
 	API1 a;
+	/*Initialisierung der Frame*/
+	Zielflughafen frame1;
+	/*Liste für die Zielflughäfen*/
 	JList JLzielflughafen;
+	/*Model für die Liste*/
 	DefaultListModel<String> model = new DefaultListModel<>();
 	
 	public Zielflughafen(GUI1 frame){
 	
+		/*Objekt für API wird erstellt*/
 		a =  new API1();
-		Zielflughafen frame1;
+		/*Einstellungen für Frame*/
 		setTitle("Zielflughafen");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(0, 0, 450, 350);
 		setLocationRelativeTo(null);
+		setResizable(false);
 		setVisible(false);
 		
+		/*Hauptpanel der Frame*/
 		JPanel panel = new JPanel();
 		getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
+		/*Titel für die Frame*/
 		JLabel JLtitle = new JLabel("Flug nach:");
 		JLtitle.setBounds(11, 1, 264, 51);
 		JLtitle.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		panel.add(JLtitle);
 		
-		
+		/*Liste für das Anzeigen von Zielflughäfen*/
 		JLzielflughafen = new JList(model);
 		JLzielflughafen.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JLzielflughafen.setBounds(10, 43, 414, 194);
@@ -69,6 +78,7 @@ public class Zielflughafen extends JFrame{
 		scrollPane.setVisible(true);
 		JLzielflughafen.setVisibleRowCount(9);
 		
+		/*Befüllen der JList*/
 		for(int i = 0; i < a.airports.size(); i++) {
 			model.addElement(a.airports.get(i));
 			
@@ -93,39 +103,60 @@ public class Zielflughafen extends JFrame{
 		JLzurück.setOpaque(true);
 		panel.add(JLzurück);
 		
+		/**
+		 * Onclick-Action für den Weiter-Button:
+		 * Es muss ein Flug ausgewählt werden, um die Frame zu schliessen
+		 */
 		JLweiter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				/*Varialbe für das Spiechern des ausgewählten Flughafens*/
 				String selected = (String) JLzielflughafen.getSelectedValue();
 				
+				/*Ist die Auswahl nicht gleich null?*/
 				if(selected != null) {
+					/*Frame wird unsichtbar*/
 					setVisible(false);
+					/*Duch Methode in GUI1 wird Abflughafen gespeichert*/
 					frame.setZielflughafen();
+					/*Frame von GUI1 wird wieder sichtbar*/
 					frame.setVisible(true);
 				}
 				
 				else {
+					/*Warnungs-Hinweis, dass kein Flughafen ausgewählt wurde*/
 					JOptionPane.showMessageDialog(null,"Sie müssen einen Zielflughafen wählen", "Hinweis", JOptionPane.WARNING_MESSAGE);
 				}
 			}
 		});
 		
-		/*Button Zurück zum Schliessen des GUIs*/
+		/**
+		 * Onclick-Action für den Zurück-Button:
+		 */
 		JLzurück.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				/*Frame wird unsichtbar*/
 				setVisible(false);
-				new Frame();
+				/*Frame von GUI1 wird wieder sichtbar*/
 				frame.setVisible(true);
 			}
 		});
 	}
 	
+	/**
+	 * Speicherung des ausgewählten Zielflughafens, welcher zurückgegeben wird
+	 * @return ausgewählter Zielflughafen
+	 */
 	public String guiAuswahl() {
+		/*Zwischenspeicherung des ausgewählten Zielflughafen*/
 		String selected = (String) JLzielflughafen.getSelectedValue();
 		return selected;
 	}
 	
+	/**
+	 * Methode zur Visualisierung der Frame
+	 */
 	public void visibleGUI() {
 		setVisible(true);
 	}

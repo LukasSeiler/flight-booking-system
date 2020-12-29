@@ -94,17 +94,7 @@ public class API1 {
 			
 		}
 		    
-		}
-		/*for (int i = 0; i < jsonArray.length(); i++) {
-			
-			JSONObject code = jsonArray.getJSONObject(i);
-			if(!(jsonArray.toString() == null)){
-				code.add((String) country.get("icao_code"));
-			}else {
-				System.out.println("Null");
-				break;
-			}
-		}*/
+	}
 	
 	/**
 	 * Mit setrun wird der Status von run auf false gesetzt, damit soll bei parse das Befüllen der ArrayList beendet werden.
