@@ -42,34 +42,48 @@ import javax.swing.JScrollBar;
 
 public class GUI3 extends JFrame{
 	
+	/*Initialisierung der Frame vom GUI3*/
 	static GUI3 frameGUI3;
+	/*Initialisierung der Frame vom GUI4*/
 	static GUI4 frameGUI4;
+	/*Icon für einen freien (grauen) Stuhl*/
 	ImageIcon icon1 = new ImageIcon(getClass().getResource("icons8-sleeper-chair-35.png"));
+	/*Icon für einen selektierten (orangen) Stuhl*/
 	ImageIcon icon2 = new ImageIcon(getClass().getResource("icons8-sleeper-chair-36.png"));
+	/*Farbe für Orange*/
 	Color myOrange = new Color(255, 127, 000);
+	/*Sitze am Fenster, Variable für das Ein- und Ausblenden der Extras*/
 	int i = 0;
+	/*Sitze in den vorderen Reihen, Variable für das Ein- und Ausblenden der Extras*/
 	int j = 0;
+	/*Anzahl der ausgewählten Sitze*/
 	int selected = 0;
+	/*Betrag für die Reservierung der Sitze*/
 	static int betrag = 0;
 
 	public GUI3(GUI2 frameGUI2) {
+		
+		/*Einstellunge der Frame*/
 		setSize(585, 569);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setTitle("Sitzplatzauswahl");
 		getContentPane().setLayout(null);
 		
+		/*globales Panel der Frame*/
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 580, 540);
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
+		/*Panel für die Sitze*/
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.DARK_GRAY);
 		panel_1.setBounds(20, 23, 320, 500);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
+		/*Label für die Beschriftung der Spalte A*/
 		JLabel JLrowA = new JLabel("A");
 		JLrowA.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrowA.setForeground(Color.WHITE);
@@ -77,6 +91,7 @@ public class GUI3 extends JFrame{
 		JLrowA.setBounds(20, 20, 40, 40);
 		panel_1.add(JLrowA);
 		
+		/*Label für die Beschriftung der Spalte B*/
 		JLabel JLrowB = new JLabel("B");
 		JLrowB.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrowB.setForeground(Color.WHITE);
@@ -84,6 +99,7 @@ public class GUI3 extends JFrame{
 		JLrowB.setBounds(80, 20, 40, 40);
 		panel_1.add(JLrowB);
 		
+		/*Label für die Beschriftung der Spalte C*/
 		JLabel JLrowC = new JLabel("C");
 		JLrowC.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrowC.setForeground(Color.WHITE);
@@ -91,6 +107,7 @@ public class GUI3 extends JFrame{
 		JLrowC.setBounds(200, 20, 40, 40);
 		panel_1.add(JLrowC);
 		
+		/*Label für die Beschriftung der Spalte D*/
 		JLabel JLrowD = new JLabel("D");
 		JLrowD.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrowD.setForeground(Color.WHITE);
@@ -98,6 +115,7 @@ public class GUI3 extends JFrame{
 		JLrowD.setBounds(260, 20, 40, 40);
 		panel_1.add(JLrowD);
 		
+		/*Icon für Sitz*/
 		JLabel JLs1a = new JLabel("");
 		JLs1a.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs1a.setIcon(icon1);
@@ -106,6 +124,7 @@ public class GUI3 extends JFrame{
 		JLs1a.setBounds(20, 80, 40, 40);
 		panel_1.add(JLs1a);
 		
+		/*Icon für Sitz*/
 		JLabel JLs1b = new JLabel("");
 		JLs1b.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs1b.setIcon(icon1);
@@ -114,6 +133,7 @@ public class GUI3 extends JFrame{
 		JLs1b.setBounds(80, 80, 40, 40);
 		panel_1.add(JLs1b);
 		
+		/*Label für die Reihe 1*/
 		JLabel JLrow1 = new JLabel("1");
 		JLrow1.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrow1.setForeground(Color.WHITE);
@@ -121,6 +141,7 @@ public class GUI3 extends JFrame{
 		JLrow1.setBounds(140, 80, 40, 40);
 		panel_1.add(JLrow1);
 		
+		/*Icon für Sitz*/
 		JLabel JLs1c = new JLabel("");
 		JLs1c.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs1c.setIcon(icon1);
@@ -129,6 +150,7 @@ public class GUI3 extends JFrame{
 		JLs1c.setBounds(200, 80, 40, 40);
 		panel_1.add(JLs1c);
 		
+		/*Icon für Sitz*/
 		JLabel JLs1d = new JLabel("");
 		JLs1d.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs1d.setIcon(icon1);
@@ -137,6 +159,7 @@ public class GUI3 extends JFrame{
 		JLs1d.setBounds(260, 80, 40, 40);
 		panel_1.add(JLs1d);
 		
+		/*Icon für Sitz*/
 		JLabel JLs2a = new JLabel("");
 		JLs2a.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs2a.setIcon(icon1);
@@ -145,6 +168,7 @@ public class GUI3 extends JFrame{
 		JLs2a.setBounds(20, 140, 40, 40);
 		panel_1.add(JLs2a);
 		
+		/*Icon für Sitz*/
 		JLabel JLs2b = new JLabel("");
 		JLs2b.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs2b.setIcon(icon1);
@@ -153,6 +177,7 @@ public class GUI3 extends JFrame{
 		JLs2b.setBounds(80, 140, 40, 40);
 		panel_1.add(JLs2b);
 		
+		/*Label für die Reihe 2*/
 		JLabel JLrow2 = new JLabel("2");
 		JLrow2.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrow2.setForeground(Color.WHITE);
@@ -160,6 +185,7 @@ public class GUI3 extends JFrame{
 		JLrow2.setBounds(140, 140, 40, 40);
 		panel_1.add(JLrow2);
 		
+		/*Icon für Sitz*/
 		JLabel JLs2c = new JLabel("");
 		JLs2c.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs2c.setIcon(icon1);
@@ -168,6 +194,7 @@ public class GUI3 extends JFrame{
 		JLs2c.setBounds(200, 140, 40, 40);
 		panel_1.add(JLs2c);
 		
+		/*Icon für Sitz*/
 		JLabel JLs2d = new JLabel("");
 		JLs2d.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs2d.setIcon(icon1);
@@ -176,6 +203,7 @@ public class GUI3 extends JFrame{
 		JLs2d.setBounds(260, 140, 40, 40);
 		panel_1.add(JLs2d);
 		
+		/*Icon für Sitz*/
 		JLabel JLs3a = new JLabel("");
 		JLs3a.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs3a.setIcon(icon1);
@@ -184,6 +212,7 @@ public class GUI3 extends JFrame{
 		JLs3a.setBounds(20, 200, 40, 40);
 		panel_1.add(JLs3a);
 		
+		/*Icon für Sitz*/
 		JLabel JLs3b = new JLabel("");
 		JLs3b.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs3b.setIcon(icon1);
@@ -192,6 +221,7 @@ public class GUI3 extends JFrame{
 		JLs3b.setBounds(80, 200, 40, 40);
 		panel_1.add(JLs3b);
 		
+		/*Label für die Reihe 3*/
 		JLabel JLrow3 = new JLabel("3");
 		JLrow3.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrow3.setForeground(Color.WHITE);
@@ -199,6 +229,7 @@ public class GUI3 extends JFrame{
 		JLrow3.setBounds(140, 200, 40, 40);
 		panel_1.add(JLrow3);
 		
+		/*Icon für Sitz*/
 		JLabel JLs3c = new JLabel("");
 		JLs3c.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs3c.setIcon(icon1);
@@ -207,6 +238,7 @@ public class GUI3 extends JFrame{
 		JLs3c.setBounds(200, 200, 40, 40);
 		panel_1.add(JLs3c);
 		
+		/*Icon für Sitz*/
 		JLabel JLs3d = new JLabel("");
 		JLs3d.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs3d.setIcon(icon1);
@@ -215,6 +247,7 @@ public class GUI3 extends JFrame{
 		JLs3d.setBounds(260, 200, 40, 40);
 		panel_1.add(JLs3d);
 		
+		/*Icon für Sitz*/
 		JLabel JLs4a = new JLabel("");
 		JLs4a.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs4a.setIcon(icon1);
@@ -223,6 +256,7 @@ public class GUI3 extends JFrame{
 		JLs4a.setBounds(20, 260, 40, 40);
 		panel_1.add(JLs4a);
 		
+		/*Icon für Sitz*/
 		JLabel JLs4b = new JLabel("");
 		JLs4b.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs4b.setIcon(icon1);
@@ -231,6 +265,7 @@ public class GUI3 extends JFrame{
 		JLs4b.setBounds(80, 260, 40, 40);
 		panel_1.add(JLs4b);
 		
+		/*Label für die Reihe 4*/
 		JLabel JLrow4 = new JLabel("4");
 		JLrow4.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrow4.setForeground(Color.WHITE);
@@ -238,6 +273,7 @@ public class GUI3 extends JFrame{
 		JLrow4.setBounds(140, 260, 40, 40);
 		panel_1.add(JLrow4);
 		
+		/*Icon für Sitz*/
 		JLabel JLs4c = new JLabel("");
 		JLs4c.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs4c.setIcon(icon1);
@@ -246,6 +282,7 @@ public class GUI3 extends JFrame{
 		JLs4c.setBounds(200, 260, 40, 40);
 		panel_1.add(JLs4c);
 		
+		/*Icon für Sitz*/
 		JLabel JLs4d = new JLabel("");
 		JLs4d.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs4d.setIcon(icon1);
@@ -254,6 +291,7 @@ public class GUI3 extends JFrame{
 		JLs4d.setBounds(260, 260, 40, 40);
 		panel_1.add(JLs4d);
 		
+		/*Icon für Sitz*/
 		JLabel JLs5a = new JLabel("");
 		JLs5a.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs5a.setIcon(icon1);
@@ -262,6 +300,7 @@ public class GUI3 extends JFrame{
 		JLs5a.setBounds(20, 320, 40, 40);
 		panel_1.add(JLs5a);
 		
+		/*Icon für Sitz*/
 		JLabel JLs5b = new JLabel("");
 		JLs5b.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs5b.setIcon(icon1);
@@ -270,6 +309,7 @@ public class GUI3 extends JFrame{
 		JLs5b.setBounds(80, 320, 40, 40);
 		panel_1.add(JLs5b);
 		
+		/*Label für die Reihe 5*/
 		JLabel JLrow5 = new JLabel("5");
 		JLrow5.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrow5.setForeground(Color.WHITE);
@@ -277,6 +317,7 @@ public class GUI3 extends JFrame{
 		JLrow5.setBounds(140, 320, 40, 40);
 		panel_1.add(JLrow5);
 		
+		/*Icon für Sitz*/
 		JLabel JLs5c = new JLabel("");
 		JLs5c.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs5c.setIcon(icon1);
@@ -285,6 +326,7 @@ public class GUI3 extends JFrame{
 		JLs5c.setBounds(200, 320, 40, 40);
 		panel_1.add(JLs5c);
 		
+		/*Icon für Sitz*/
 		JLabel JLs5d = new JLabel("");
 		JLs5d.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs5d.setIcon(icon1);
@@ -293,6 +335,7 @@ public class GUI3 extends JFrame{
 		JLs5d.setBounds(260, 320, 40, 40);
 		panel_1.add(JLs5d);
 		
+		/*Icon für Sitz*/
 		JLabel JLs6a = new JLabel("");
 		JLs6a.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs6a.setIcon(icon1);
@@ -301,6 +344,7 @@ public class GUI3 extends JFrame{
 		JLs6a.setBounds(20, 380, 40, 40);
 		panel_1.add(JLs6a);
 		
+		/*Icon für Sitz*/
 		JLabel JLs6b = new JLabel("");
 		JLs6b.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs6b.setIcon(icon1);
@@ -309,6 +353,7 @@ public class GUI3 extends JFrame{
 		JLs6b.setBounds(80, 380, 40, 40);
 		panel_1.add(JLs6b);
 		
+		/*Label für die Reihe 6*/
 		JLabel JLrow6 = new JLabel("6");
 		JLrow6.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrow6.setForeground(Color.WHITE);
@@ -316,6 +361,7 @@ public class GUI3 extends JFrame{
 		JLrow6.setBounds(140, 380, 40, 40);
 		panel_1.add(JLrow6);
 		
+		/*Icon für Sitz*/
 		JLabel JLs6c = new JLabel("");
 		JLs6c.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs6c.setIcon(icon1);
@@ -325,6 +371,7 @@ public class GUI3 extends JFrame{
 		JLs6c.setBounds(200, 380, 40, 40);
 		panel_1.add(JLs6c);
 		
+		/*Icon für Sitz*/
 		JLabel JLs6d = new JLabel("");
 		JLs6d.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs6d.setIcon(icon1);
@@ -333,6 +380,7 @@ public class GUI3 extends JFrame{
 		JLs6d.setBounds(260, 380, 40, 40);
 		panel_1.add(JLs6d);
 		
+		/*Icon für Sitz*/
 		JLabel JLs7a = new JLabel("");
 		JLs7a.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs7a.setIcon(icon1);
@@ -341,6 +389,7 @@ public class GUI3 extends JFrame{
 		JLs7a.setBounds(20, 440, 40, 40);
 		panel_1.add(JLs7a);
 		
+		/*Icon für Sitz*/
 		JLabel JLs7b = new JLabel("");
 		JLs7b.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs7b.setIcon(icon1);
@@ -349,6 +398,7 @@ public class GUI3 extends JFrame{
 		JLs7b.setBounds(80, 440, 40, 40);
 		panel_1.add(JLs7b);
 		
+		/*Label für die Reihe 7*/
 		JLabel JLrow7 = new JLabel("7");
 		JLrow7.setHorizontalAlignment(SwingConstants.CENTER);
 		JLrow7.setForeground(Color.WHITE);
@@ -356,6 +406,7 @@ public class GUI3 extends JFrame{
 		JLrow7.setBounds(140, 440, 40, 40);
 		panel_1.add(JLrow7);
 		
+		/*Icon für Sitz*/
 		JLabel JLs7c = new JLabel("");
 		JLs7c.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs7c.setIcon(icon1);
@@ -364,6 +415,7 @@ public class GUI3 extends JFrame{
 		JLs7c.setBounds(200, 440, 40, 40);
 		panel_1.add(JLs7c);
 		
+		/*Icon für Sitz*/
 		JLabel JLs7d = new JLabel("");
 		JLs7d.setHorizontalAlignment(SwingConstants.CENTER);
 		JLs7d.setIcon(icon1);
@@ -372,8 +424,10 @@ public class GUI3 extends JFrame{
 		JLs7d.setBounds(260, 440, 40, 40);
 		panel_1.add(JLs7d);
 		
+		/*String für das speichern der Anzahl Personen aus dem GUI2*/
 		String persons = String.valueOf(frameGUI2.persons);
 		
+		/*Label für die Anzahl Personen, für welche einen Sitz ausgewählt werden muss*/
 		JLabel JLanzPersonen = new JLabel(persons);
 		JLanzPersonen.setForeground(myOrange);
 		JLanzPersonen.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -381,60 +435,71 @@ public class GUI3 extends JFrame{
 		JLanzPersonen.setBounds(350, 23, 35, 45);
 		panel.add(JLanzPersonen);
 		
+		/*Label für die Beschriftung der Anzahl Personen*/
 		JLabel JLtextpersonen = new JLabel(" Person/en");
 		JLtextpersonen.setForeground(Color.BLACK);
 		JLtextpersonen.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		JLtextpersonen.setBounds(395, 23, 117, 45);
 		panel.add(JLtextpersonen);
 		
+		/*Trennbalken*/
 		JSeparator separator1 = new JSeparator();
 		separator1.setForeground(Color.BLACK);
 		separator1.setBounds(360, 68, 200, 2);
 		panel.add(separator1);
 		
+		/*Label für die Beschriftung des Standard-Preises*/
 		JLabel JLstandard = new JLabel("Standard:");
 		JLstandard.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		JLstandard.setBounds(370, 79, 79, 38);
 		panel.add(JLstandard);
 		
+		/*Label für den Standardpreis*/
 		JLabel JLstandardpreis = new JLabel("20 CHF");
 		JLstandardpreis.setHorizontalAlignment(SwingConstants.RIGHT);
 		JLstandardpreis.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		JLstandardpreis.setBounds(459, 79, 76, 38);
 		panel.add(JLstandardpreis);
 		
+		/*Label für den Zuschlag auf den Preis für die Spalten A und D*/
 		JLabel JLad = new JLabel("A / D:");
 		JLad.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		JLad.setBounds(370, 115, 79, 38);
 		panel.add(JLad);
 		
+		/*Label für den Zuschlag*/
 		JLabel JLadpreis = new JLabel("+ 5 CHF");
 		JLadpreis.setHorizontalAlignment(SwingConstants.RIGHT);
 		JLadpreis.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		JLadpreis.setBounds(459, 115, 76, 38);
 		panel.add(JLadpreis);
 		
+		/*Label für den Zuschlag auf den Preis für die Reihen 1 und 2*/
 		JLabel JL12 = new JLabel("1 / 2:");
 		JL12.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		JL12.setBounds(370, 152, 79, 38);
 		panel.add(JL12);
 		
+		/*Label für den Zuschlag*/
 		JLabel JL12preis = new JLabel("+ 5 CHF");
 		JL12preis.setHorizontalAlignment(SwingConstants.RIGHT);
 		JL12preis.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		JL12preis.setBounds(459, 152, 76, 38);
 		panel.add(JL12preis);
 		
+		/*Trennbalken*/
 		JSeparator separator2 = new JSeparator();
 		separator2.setForeground(Color.BLACK);
 		separator2.setBounds(360, 201, 200, 2);
 		panel.add(separator2);
 		
+		/*Label für das Beschriften des Betrags*/
 		JLabel JLtextbetrag = new JLabel("Betrag:");
 		JLtextbetrag.setFont(new Font("Tahoma", Font.BOLD, 15));
 		JLtextbetrag.setBounds(369, 221, 80, 38);
 		panel.add(JLtextbetrag);
 		
+		/*Label für den totalen Betrag der Sitzreservation*/
 		JLabel JLbetrag = new JLabel(betrag+" CHF");
 		JLbetrag.setForeground(myOrange);
 		JLbetrag.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -442,24 +507,28 @@ public class GUI3 extends JFrame{
 		JLbetrag.setBounds(455, 221, 80, 38);
 		panel.add(JLbetrag);
 		
+		/*Label für den Titel der Extras*/
 		JLabel JLtextextras = new JLabel("Extras:");
 		JLtextextras.setForeground(myOrange);
 		JLtextextras.setFont(new Font("Tahoma", Font.BOLD, 15));
 		JLtextextras.setBounds(370, 259, 80, 38);
 		panel.add(JLtextextras);
 		
+		/*Label für das Extra 1 - Vordere zwei Sitzreihen*/
 		JLabel JLextras_1 = new JLabel("Up Front Sitz");
 		JLextras_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JLextras_1.setBounds(370, 289, 190, 28);
 		JLextras_1.setVisible(false);
 		panel.add(JLextras_1);
 		
+		/*Label für das Extra 2 - Fensterplätze*/
 		JLabel JLextras_2 = new JLabel("Window Sitz");
 		JLextras_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JLextras_2.setBounds(370, 315, 190, 28);
 		JLextras_2.setVisible(false);
 		panel.add(JLextras_2);
 		
+		/*Trennbalken*/
 		JSeparator separator3 = new JSeparator();
 		separator3.setForeground(Color.BLACK);
 		separator3.setBounds(360, 354, 200, 2);

@@ -22,9 +22,11 @@ public class API1 {
 	
 	private static HttpURLConnection connection;
 	public static ArrayList<String> airports = new ArrayList<String>();
-	//public static ArrayList<String> countrys = new ArrayList<String>();
+	/*i für Length des JSON-Arrays*/
 	private static int i = 0;
+	/*ArrayList wird bei run = true befüllt*/
 	private static boolean run = true;
+	/*Length für die Anzeige auf dem Menu*/
 	private static int length;
 
 	public API1() {
@@ -45,12 +47,14 @@ public class API1 {
 			
 			int status = connection.getResponseCode(); // 200 equals a success
 			
+			/*Error Status*/
 			if(status > 299) {
 				reader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
 				while((line = reader.readLine()) != null) {
 					responseContent.append(line);
 				}
 				reader.close();
+			/*Success Status*/
 			}else {
 				reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 				while((line = reader.readLine()) != null) {
@@ -60,6 +64,7 @@ public class API1 {
 				reader.close();
 			}
 			//System.out.println(responseContent.toString());
+			/*Run wird false, wenn auf dem Menu "start" geklickt wird*/
 			if(run == true) {
 				parse(responseContent.toString());
 			}
@@ -85,9 +90,7 @@ public class API1 {
 			if(jsonArray.toString() != null && i != (length-2) && run != false){
 				airports.add((String) airport.get("airport_name"));
 				GUI1.menu.Status(i, length);
-				//System.out.println(i+" von "+length);
 			}else{
-				//System.out.println("else");
 				i = 8000;
 				run = false;
 			}

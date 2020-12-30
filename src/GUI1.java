@@ -763,6 +763,7 @@ public class GUI1 extends JFrame{
 	public void setAbflughafen() {
 		/*Ausgewählter Abflughafen wird zwischengespeichert*/
 		String selected = ab.guiAuswahl();
+		/*Abflughafen wird in JLabel eingefügt*/
 		JTab.setText(selected);
 	}
 	
@@ -772,6 +773,7 @@ public class GUI1 extends JFrame{
 	public void setZielflughafen() {
 		/*Ausgewählter Zielflughafen wird zwischengespeichert*/
 		String selected = ziel.guiAuswahl();
+		/*Zielflughafen wird in JLabel eingefügt*/
 		JTnach.setText(selected);
 	}
 }
