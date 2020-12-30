@@ -30,74 +30,96 @@ import javax.swing.JSeparator;
 
 public class GUI4 extends JFrame{
 	
+	/*Initialisierung der Frame vom GUI4*/
 	static GUI4 frameGUI4;
+	/*Initialisierung der Frame vom GUI5*/
 	static GUI5 frameGUI5;
+	/*ComboBox für die Anrede*/
 	JComboBox JCBanrede;
+	/*TextField für den Vornamen*/
 	JTextField JTvorname;
+	/*TextField für den Nachnamen*/
 	JTextField JTnachname;
+	/*TextField für die Strasse*/
 	JTextField JTstrasse;
+	/*TextField für die PLZ*/
 	JTextField JTplz;
+	/*TextField für den Ort*/
 	JTextField JTort;
+	/*Farbe für Orange*/
 	Color myOrange = new Color(255, 127, 000);
 
 	public GUI4(GUI3 frameGUI3) {
+		
+		/*Einstellungen der Frame*/
 		setTitle("Persönliche Daten");
 		setSize(450, 500);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		getContentPane().setLayout(null);
 		
+		/*globales Panel der Frame*/
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 434, 461);
 		getContentPane().add(panel);
 		panel.setLayout(null);
 		
+		/*Label für die Beschriftung der Anrede*/
 		JLabel JLtitleanred = new JLabel("Anrede:");
 		JLtitleanred.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JLtitleanred.setBounds(10, 11, 61, 33);
 		panel.add(JLtitleanred);
 		
+		/*ComboBox für die Anrede*/
 		JCBanrede = new JComboBox();
 		JCBanrede.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JCBanrede.setModel(new DefaultComboBoxModel(new String[] {"Herr", "Frau"}));
 		JCBanrede.setBounds(10, 43, 179, 35);
 		panel.add(JCBanrede);
 		
+		/*JLabel für die Beschriftung des Vornamens*/
 		JLabel JLtitlevorname = new JLabel("Vorname:");
 		JLtitlevorname.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JLtitlevorname.setBounds(10, 89, 78, 33);
 		panel.add(JLtitlevorname);
 		
+		/*TextField für den Vornamen*/
 		JTvorname = new JTextField();
 		JTvorname.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JTvorname.setBounds(10, 120, 179, 33);
 		panel.add(JTvorname);
 		
+		/*JLabel für die Beschriftung des Nachnamens*/
 		JLabel JLtitlenachname = new JLabel("Nachname:");
 		JLtitlenachname.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JLtitlenachname.setBounds(226, 89, 78, 33);
 		panel.add(JLtitlenachname);
 		
+		/*TextField für den Nachnamen*/
 		JTnachname = new JTextField();
 		JTnachname.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JTnachname.setBounds(226, 120, 179, 33);
 		panel.add(JTnachname);
 		
+		/*Trennbalken*/
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.BLACK);
 		separator.setBounds(10, 206, 397, 10);
 		panel.add(separator);
 		
+		/*Label für den Titel des Adressteils*/
 		JLabel JLtitleadresse = new JLabel("Adresse:");
 		JLtitleadresse.setFont(new Font("Tahoma", Font.BOLD, 13));
 		JLtitleadresse.setBounds(10, 179, 126, 23);
 		panel.add(JLtitleadresse);
 		
+		/*Label für die Beschriftung der Strasse*/
 		JLabel JLtitlestrasse = new JLabel("Strasse:");
 		JLtitlestrasse.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JLtitlestrasse.setBounds(10, 227, 78, 33);
 		panel.add(JLtitlestrasse);
 		
+		/*TextField für die Strasse*/
 		JTstrasse = new JTextField();
 		JTstrasse.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		JTstrasse.setBounds(10, 258, 179, 33);

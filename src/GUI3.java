@@ -46,7 +46,7 @@ public class GUI3 extends JFrame{
 	static GUI3 frameGUI3;
 	/*Initialisierung der Frame vom GUI4*/
 	static GUI4 frameGUI4;
-	/*Icon für einen freien (grauen) Stuhl*/
+	/*Icon für einen freien (weissen) Stuhl*/
 	ImageIcon icon1 = new ImageIcon(getClass().getResource("icons8-sleeper-chair-35.png"));
 	/*Icon für einen selektierten (orangen) Stuhl*/
 	ImageIcon icon2 = new ImageIcon(getClass().getResource("icons8-sleeper-chair-36.png"));
@@ -534,6 +534,7 @@ public class GUI3 extends JFrame{
 		separator3.setBounds(360, 354, 200, 2);
 		panel.add(separator3);
 		
+		/*Button für das Verlassen der Frame*/
 		JLabel JLweiter = new JLabel("Weiter >");
 		JLweiter.setHorizontalAlignment(SwingConstants.CENTER);
 		JLweiter.setBackground(myOrange);
@@ -543,6 +544,7 @@ public class GUI3 extends JFrame{
 		JLweiter.setBounds(359, 367, 201, 71);
 		panel.add(JLweiter);
 		
+		/*Button für das Wechseln auf die letzte Frame*/
 		JLabel JLzurück = new JLabel("Zurück <");
 		JLzurück.setBackground(Color.LIGHT_GRAY);
 		JLzurück.setOpaque(true);
@@ -552,6 +554,12 @@ public class GUI3 extends JFrame{
 		JLzurück.setBounds(359, 452, 201, 71);
 		panel.add(JLzurück);
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs1a.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -583,6 +591,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs1b.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -607,6 +621,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs1c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -631,6 +651,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs1d.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -663,6 +689,12 @@ public class GUI3 extends JFrame{
 		
 		/*--------------------------*/
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs2a.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -687,6 +719,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs2b.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -705,6 +743,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs2c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -723,6 +767,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs2d.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -749,6 +799,12 @@ public class GUI3 extends JFrame{
 		
 		/*--------------------------*/
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs3a.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -773,6 +829,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs3b.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -791,6 +853,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs3c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -809,6 +877,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs3d.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -835,6 +909,12 @@ public class GUI3 extends JFrame{
 		
 		/*--------------------------*/
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs4a.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -859,6 +939,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs4b.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -877,6 +963,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs4c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -895,6 +987,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs4d.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -921,6 +1019,12 @@ public class GUI3 extends JFrame{
 		
 		/*--------------------------*/
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs5a.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -945,6 +1049,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs5b.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -963,6 +1073,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs5c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -981,6 +1097,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs5d.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1007,6 +1129,12 @@ public class GUI3 extends JFrame{
 		
 		/*--------------------------*/
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs6a.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1031,6 +1159,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs6b.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1049,6 +1183,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs6c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1067,6 +1207,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs6d.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1093,6 +1239,12 @@ public class GUI3 extends JFrame{
 		
 		/*--------------------------*/
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs7a.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1117,6 +1269,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs7b.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1135,6 +1293,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs7c.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1153,6 +1317,12 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action beim Sitz:
+		 * Falls er noch nicht angewählt wurde, erscheint er orange und wird zu selected hinzugefügt.
+		 * Falls er schon angewählt wurde, erscheint er wieder weiss und wird von selected subtrahiert.
+		 * Der Betrag wird auch angepasst, sowie die Variablen j + i für die Extras.
+		 */
 		JLs7d.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1177,13 +1347,21 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action für Weiter:
+		 * Es wird geprüft, ob so viele Sitze selected worden sind wie auch Passagiere ausgewählt wurden.
+		 * Falls diese zwei Werte nicht übereinstimmen, wird eine Hinweis-Meldung ausgegeben
+		 * Falls diese zwei Werte übereinstimmen, wird die aktuelle Frame unsichtbar und die Frame von GUI3 sichbar gemacht.
+		 */
 		JLweiter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(selected == frameGUI2.persons) {
+					/*Frame wird unsichtbar gemacht*/
 					setVisible(false);	
-					//System.out.println("Total: "+(betrag+frameGUI2.price));
+					/*Neue Frame für das GUI4 wird erstellt*/
 					frameGUI4 = new GUI4(frameGUI3);
+					/*Frame für das GUI4 wird sichtbar gemacht*/
 					frameGUI4.setVisible(true);
 				}
 				else {
@@ -1192,11 +1370,18 @@ public class GUI3 extends JFrame{
 			}
 		});
 		
+		/**
+		 * Onclick-Action für Zurück:
+		 * Die aktuelle Frame wird unsichtbar gemacht, der Betrag zurückgesetzt und zurück auf die Frame von GUI2 gewechselt
+		 */
 		JLzurück.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				/*Frame wird unsichtbar gemacht*/
 				setVisible(false);
+				/*Betrag wird zurückgesetzt*/
 				betrag = 0;
+				/*Frame von GUI2 wird sichtbar gemacht*/
 				GUI1.frameGUI2.setVisible(true);
 			}
 		});
