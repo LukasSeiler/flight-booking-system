@@ -3,10 +3,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -68,7 +72,8 @@ public class GUI1 extends JFrame{
 	JLabel JLcounter3;
 	/*Pattern für das Überprüfen des eingegebenen Datums*/
 	private Pattern pattern = Pattern.compile("\\b(0[1-9]|[12][0-9]?|3[01]?|[4-9])\\b\\.\\b(0[1-9]|[1][0-2]?|[2-9])\\b\\.\\b([1-2][019][0-9][0-9])\\b");
-	
+	Date date1;
+	Date date2;
 	
 	public static void main(String[] args) {
 		
@@ -707,12 +712,36 @@ public class GUI1 extends JFrame{
 					JThinflugdatum.setBackground(Color.yellow);
 					JThinflugdatum.setOpaque(true);
 				}
+				 
+				/*Datums-Format*/
+				SimpleDateFormat sdfo = new SimpleDateFormat("dd.MM.yyyy");   
+  
+				try {
+					/*String wird in Datum konvertiert*/
+					date1 = (Date) sdfo.parse(JThinflugdatum.getText());
+				} catch (ParseException e2) {
+					e2.printStackTrace();
+				}  
+				try {
+					/*String wird in Datum konvertiert*/
+					date2 = (Date) sdfo.parse(JTrückflugdatum.getText());
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}   
 				
 				/*Wurde Hin- und Rückflug gewählt?*/
 				if(statushinflug == true) {
+					
+					/*Ist das Hinflugdatum nach dem Rückflugdatum?*/
+					if(date1.after(date2)){  
+						 JTrückflugdatumstatus = false; 
+						 /*JLabel wird gelb*/
+						 JTrückflugdatum.setBackground(Color.yellow);
+						 JTrückflugdatum.setOpaque(true);
+					 }    
 										
-					/*Ist das Rückflugdatum korrekt?*/
-					if(r.matches() == true) {
+					/*Ist das Rückflugdatum korrekt und nach dem Hinflugdatum?*/
+					if((r.matches() == true && date1.before(date2)) || (r.matches() == true && date1.equals(date2))) {
 						/*JLabel wird weiss*/
 						JTrückflugdatum.setBackground(Color.white);
 						JTrückflugdatumstatus = true;
