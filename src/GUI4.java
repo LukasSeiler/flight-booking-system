@@ -34,6 +34,8 @@ public class GUI4 extends JFrame{
 	static GUI4 frameGUI4;
 	/*Initialisierung der Frame vom GUI5*/
 	static GUI5 frameGUI5;
+	/*Initialisierung der API2*/
+	API2 a;
 	/*ComboBox für die Anrede*/
 	JComboBox JCBanrede;
 	/*TextField für den Vornamen*/
@@ -223,6 +225,35 @@ public class GUI4 extends JFrame{
 		panel.add(o7);
 		
 		/**
+		 * Onclick-Action in Ort-TextField:
+		 * Es wird von der PLZ mithilfe der API der Name des Ortes bestimmt.
+		 */
+		JTort.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				/*Text im TextField wird gelöscht*/
+				JTort.setText("");
+				/*PLZ wird aus JTPLZ gezogen und zwischengespeichert*/
+				String plz = JTplz.getText();
+				/*Objekt für API2*/
+				a = new API2(plz);
+				/*Gefundener Ort wird in das TextField eingefügt*/
+				JTort.setText(a.ortschaft);
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				/*Text im TextField wird gelöscht*/
+				JTort.setText("");
+				/*PLZ wird aus JTPLZ gezogen und zwischengespeichert*/
+				String plz = JTplz.getText();
+				/*Objekt für API2*/
+				a = new API2(plz);
+				/*Gefundener Ort wird in das TextField eingefügt*/
+				JTort.setText(a.ortschaft);
+			}
+		});
+		
+		/**
 		 * Onclick-Action für Weiter:
 		 * Es werden diverse Checks gemacht,welche unten aufgeführt sind
 		 */
@@ -276,10 +307,24 @@ public class GUI4 extends JFrame{
 					JTplz.setOpaque(true);
 				}
 				
-				/*Es wird geprpft, ob der Ort definiert wurde*/
+				/*Es wird geprüft, ob der Ort definiert wurde*/
 				if(! JTort.getText().isEmpty() && JTort.getText() != null) {
 					JTort.setBackground(Color.white);
-					JTortstatus = true;
+					
+					String plz = JTplz.getText();
+					/*Objekt für API2*/
+					a = new API2(plz);
+					
+					/*Es wird geprüft, ob das Feld des Orts ausgefüllt wurde und ob die EIngabe mit der Rückmeldung der API übereinstimmt */
+					if(! a.ortschaft.equalsIgnoreCase("") && JTort.getText().equalsIgnoreCase(a.ortschaft)){
+						JTortstatus = true;
+					}
+					else {
+						/*Hintergrund des TextFields wird gelb*/
+						JTort.setBackground(Color.yellow);
+						JTort.setOpaque(true);
+					}
+			
 				}else {
 					/*Hintergrund des TextFields wird gelb*/
 					JTort.setBackground(Color.yellow);
