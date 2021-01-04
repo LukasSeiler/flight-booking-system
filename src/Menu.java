@@ -57,7 +57,7 @@ public class Menu extends JFrame{
 		
 		/*Einstellungen der Frame*/
 		getContentPane().setLayout(null);
-		setTitle("Zielflughafen");
+		setTitle("Menu");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(0, 0, 465, 315);
 		setResizable(false);

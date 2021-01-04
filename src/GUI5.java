@@ -87,18 +87,38 @@ public class GUI5 extends JFrame{
 		JLtitlehinflug.setFont(new Font("Tahoma", Font.BOLD, 13));
 		JLtitlehinflug.setBounds(20, 142, 404, 24);
 		panel.add(JLtitlehinflug);
+	
+		/*Label für den Titel*/
+		JLabel JLtitle1 = new JLabel("Abflug:");
+		JLtitle1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		JLtitle1.setBounds(20, 177, 59, 24);
+		panel.add(JLtitle1);
 		
 		/*Label für die Anzeige der Abflugdaten*/
-		JLabel JLabflug1 = new JLabel("Abflug: "+GUI1.JThinflugdatum.getText()+" / "+GUI2.abflug1);
+		JLabel JLabflug1 = new JLabel(GUI1.JThinflugdatum.getText()+" / "+GUI2.abflug1);
+		JLabflug1.setForeground(myOrange);
 		JLabflug1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		JLabflug1.setBounds(20, 177, 404, 24);
+		JLabflug1.setBounds(84, 177, 340, 24);
 		panel.add(JLabflug1);
 		
+		/*Label für den Titel*/
+		JLabel JLtitle2 = new JLabel("Ankunft:");
+		JLtitle2.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		JLtitle2.setBounds(20, 202, 59, 24);
+		panel.add(JLtitle2);
+		
 		/*Label für die Anzeige der Ankunftsdaten*/
-		JLabel JLankunft1 = new JLabel("Ankunft: "+GUI1.JThinflugdatum.getText()+" / "+GUI2.ankunft1);
+		JLabel JLankunft1 = new JLabel(GUI1.JThinflugdatum.getText()+" / "+GUI2.ankunft1);
+		JLankunft1.setForeground(myOrange);
 		JLankunft1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		JLankunft1.setBounds(20, 202, 404, 24);
+		JLankunft1.setBounds(84, 202, 340, 24);
 		panel.add(JLankunft1);
+		
+		/*Label für den Titel*/
+		JLabel JLtitle3 = new JLabel("Abflug:");
+		JLtitle3.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		JLtitle3.setBounds(20, 272, 59, 24);
+		panel.add(JLtitle3);
 		
 		/*Label für die Anzeige des Rückfluges*/
 		JLabel JLtitlerückflug = new JLabel("Von "+GUI1.zielflughafen+" nach "+GUI1.abflughafen);
@@ -107,16 +127,24 @@ public class GUI5 extends JFrame{
 		JLtitlerückflug.setBounds(20, 237, 404, 24);
 		panel.add(JLtitlerückflug);
 		
+		/*Label für den Titel*/
+		JLabel JLtitle4 = new JLabel("Ankunft:");
+		JLtitle4.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		JLtitle4.setBounds(20, 297, 59, 24);
+		panel.add(JLtitle4);
+		
 		/*Label für die Anzeige der Abflugdaten*/
-		JLabel JLabflug2 = new JLabel("Abflug: "+GUI1.JTrückflugdatum.getText()+" / "+GUI2.abflug2);
+		JLabel JLabflug2 = new JLabel(GUI1.JTrückflugdatum.getText()+" / "+GUI2.abflug2);
+		JLabflug2.setForeground(myOrange);
 		JLabflug2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		JLabflug2.setBounds(20, 272, 404, 24);
+		JLabflug2.setBounds(84, 272, 340, 24);
 		panel.add(JLabflug2);
 		
 		/*Label für die Anzeige der Ankunftsdaten*/
-		JLabel JLankunft2 = new JLabel("Ankunft: "+GUI1.JTrückflugdatum.getText()+" / "+GUI2.ankunft2);
+		JLabel JLankunft2 = new JLabel(GUI1.JTrückflugdatum.getText()+" / "+GUI2.ankunft2);
+		JLankunft2.setForeground(myOrange);
 		JLankunft2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		JLankunft2.setBounds(20, 297, 404, 24);
+		JLankunft2.setBounds(84, 297, 340, 24);
 		panel.add(JLankunft2);
 		
 		/*Wurde ein Hin- und Rücklfug gewählt?*/

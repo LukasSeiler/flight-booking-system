@@ -93,6 +93,7 @@ public class GUI1 extends JFrame{
 	}
 
 	public GUI1() {
+		setTitle("Fl\u00FCge");
 		
 		/*Einstellungen der Frame*/
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -721,16 +722,17 @@ public class GUI1 extends JFrame{
 					date1 = (Date) sdfo.parse(JThinflugdatum.getText());
 				} catch (ParseException e2) {
 					e2.printStackTrace();
-				}  
-				try {
-					/*String wird in Datum konvertiert*/
-					date2 = (Date) sdfo.parse(JTrückflugdatum.getText());
-				} catch (ParseException e1) {
-					e1.printStackTrace();
-				}   
+				}  	
 				
 				/*Wurde Hin- und Rückflug gewählt?*/
 				if(statushinflug == true) {
+					
+					try {
+						/*String wird in Datum konvertiert*/
+						date2 = (Date) sdfo.parse(JTrückflugdatum.getText());
+					} catch (ParseException e1) {
+						e1.printStackTrace();
+					}   
 					
 					/*Ist das Hinflugdatum nach dem Rückflugdatum?*/
 					if(date1.after(date2)){  
